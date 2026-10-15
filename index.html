@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101828">
+  <meta name="description" content="Una piccola pagina di benvenuto per montpellier-test001.">
+  <title>Montpellier Test 001</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172033;
+      --muted: #5d687c;
+      --paper: #f7f8fc;
+      --accent: #635bff;
+      --accent-dark: #443bd2;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(ellipse at 12% 8%, rgba(99, 91, 255, .16), transparent 35rem),
+        radial-gradient(ellipse at 95% 85%, rgba(34, 197, 166, .13), transparent 30rem),
+        var(--paper);
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+    }
+    header, footer { width: min(1080px, calc(100% - 3rem)); margin: 0 auto; }
+    header { padding: 1.5rem 0; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .brand { display: inline-flex; align-items: center; gap: .7rem; font-weight: 750; letter-spacing: -.03em; }
+    .brand-mark { width: 2.35rem; height: 2.35rem; border-radius: .8rem; display: grid; place-items: center; color: white; background: var(--accent); box-shadow: 0 8px 20px rgba(99,91,255,.25); }
+    .status { border: 1px solid #dce2ed; border-radius: 999px; padding: .45rem .75rem; color: var(--muted); font-size: .82rem; background: rgba(255,255,255,.7); }
+    main { display: grid; place-items: center; padding: 3rem 1.5rem 5rem; }
+    .hero { width: min(760px, 100%); text-align: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .5rem; color: var(--accent-dark); font-weight: 700; font-size: .82rem; text-transform: uppercase; letter-spacing: .13em; }
+    .eyebrow::before { content: ""; width: 1.5rem; height: 2px; background: currentColor; }
+    h1 { margin: 1.1rem 0; font-size: clamp(2.8rem, 8vw, 5.7rem); line-height: .99; letter-spacing: -.075em; }
+    h1 span { color: var(--accent); }
+    .intro { max-width: 570px; margin: 0 auto; color: var(--muted); font-size: clamp(1.05rem, 2.5vw, 1.2rem); line-height: 1.8; }
+    .actions { margin-top: 2rem; display: flex; justify-content: center; flex-wrap: wrap; gap: .8rem; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 3rem; padding: .8rem 1.15rem; border-radius: .85rem; text-decoration: none; font-weight: 700; transition: transform .18s ease, box-shadow .18s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .primary { color: white; background: var(--accent); box-shadow: 0 10px 24px rgba(99,91,255,.24); }
+    .primary:hover { background: var(--accent-dark); }
+    .secondary { color: var(--ink); border: 1px solid #dce2ed; background: rgba(255,255,255,.7); }
+    .note { margin: 3.5rem auto 0; padding: 1.1rem 1.3rem; width: min(490px, 100%); text-align: left; display: flex; align-items: flex-start; gap: .9rem; border: 1px solid rgba(220,226,237,.9); border-radius: 1rem; background: rgba(255,255,255,.68); }
+    .note-icon { font-size: 1.3rem; }
+    .note strong { display: block; margin-bottom: .2rem; }
+    .note p { margin: 0; color: var(--muted); font-size: .93rem; line-height: 1.6; }
+    footer { padding: 1.5rem 0 2rem; display: flex; justify-content: space-between; gap: 1rem; color: var(--muted); font-size: .85rem; border-top: 1px solid #e4e8f0; }
+    footer a { color: inherit; }
+    @media (max-width: 520px) {
+      header, footer { width: min(100% - 2rem, 1080px); }
+      .status { font-size: .75rem; }
+      footer { flex-direction: column; align-items: center; text-align: center; }
+      main { padding-top: 2rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="brand" href="./" aria-label="Montpellier Test 001, home" style="color: inherit; text-decoration: none;">
+      <span class="brand-mark" aria-hidden="true">M</span>
+      <span>montpellier-test001</span>
+    </a>
+    <span class="status">✦ Online, un passo alla volta</span>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="welcome-title">
+      <div class="eyebrow">Il nostro piccolo spazio web</div>
+      <h1 id="welcome-title">Ciao, <span>mondo!</span></h1>
+      <p class="intro">Benvenuto in <strong>montpellier-test001</strong>: una semplice pagina, pronta a diventare il punto di partenza per nuove idee.</p>
+      <div class="actions">
+        <a class="button primary" href="https://github.com/federicoboschetti73/montpellier-test001">Esplora il repository ↗</a>
+        <a class="button secondary" href="#info">Scopri di più</a>
+      </div>
+      <aside class="note" id="info">
+        <span class="note-icon" aria-hidden="true">🚀</span>
+        <div>
+          <strong>Pubblicabile con GitHub Pages</strong>
+          <p>Questa pagina è un singolo file HTML con CSS incorporato: non richiede build, framework o dipendenze.</p>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <footer>
+    <span>© <span id="year">2026</span> montpellier-test001</span>
+    <span>Realizzato con curiosità e un po’ di codice.</span>
+  </footer>
+</body>
+</html>
